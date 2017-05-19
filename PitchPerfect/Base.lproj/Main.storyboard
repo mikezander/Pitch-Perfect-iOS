@@ -52,11 +52,20 @@
                                 </subviews>
                                 <variation key="heightClass=compact-widthClass=compact" axis="horizontal"/>
                             </stackView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fIE-go-gqI">
+                                <rect key="frame" x="16" y="647" width="343" height="0.0"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.86666666670000003" green="0.17254901959999999" blue="0.0" alpha="0.87" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" cocoaTouchSystemColor="darkTextColor"/>
                         <constraints>
                             <constraint firstItem="R7F-z7-O8g" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" constant="42.5" id="2k3-sI-320"/>
+                            <constraint firstItem="fIE-go-gqI" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailingMargin" id="GH2-m1-eo9"/>
                             <constraint firstItem="R7F-z7-O8g" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="QjA-sW-gV2"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="fIE-go-gqI" secondAttribute="bottom" constant="20" id="juH-PJ-VVK"/>
+                            <constraint firstItem="fIE-go-gqI" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="kba-lf-p4y"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="cIV-C1-4w4"/>

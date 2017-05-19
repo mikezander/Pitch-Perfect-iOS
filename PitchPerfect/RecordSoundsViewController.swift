@@ -19,16 +19,13 @@ class RecordSoundsViewController: UIViewController, AVAudioRecorderDelegate {
     @IBOutlet weak var recordButton: UIButton!
     @IBOutlet weak var stopRecordingButton: UIButton!
     
+    @IBOutlet weak var errorLAbel: UILabel!
    
     override func viewDidLoad() {
         super.viewDidLoad()
         stopRecordingButton.isEnabled = false
     }
  
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-        
-    }
 
     @IBAction func recordAudio(_ sender: Any){
         recordingLabel.text = "Recording in Progress"
@@ -67,11 +64,17 @@ class RecordSoundsViewController: UIViewController, AVAudioRecorderDelegate {
     //Once we stop recording segue into PlaySoundsViewController
     func audioRecorderDidFinishRecording(_ recorder: AVAudioRecorder, successfully flag: Bool) {
         if flag{
+            
             performSegue(withIdentifier: "stopRecording", sender: audioRecorder.url)
+        
         } else{
-            print("recording was not successful")
+            
+            let when = DispatchTime.now() + 3 // change 3 to desired number of seconds
+            DispatchQueue.main.asyncAfter(deadline: when) {
+                self.errorLAbel.text = "recording was not successful"
+            }
         }
-
+        
     }
 
     //Prepare for segue to PlaySoundsVC, passing the recorderAudioUrl through

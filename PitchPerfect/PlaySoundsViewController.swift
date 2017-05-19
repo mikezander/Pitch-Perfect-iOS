@@ -23,6 +23,9 @@ class PlaySoundsViewController: UIViewController {
     var audioPlayerNode: AVAudioPlayerNode!
     var stopTimer: Timer!
     
+   
+    let soundValues: Array<Float> = [0.5, 1.5, 1000, -1000];
+    
     //Enum for differnet playback sounds. The integer matches the buttons tag in storyboard
     enum ButtonType: Int{ case slow = 0, fast = 1, chipmunk = 2, vader = 3, echo = 4, reverb = 5}
     
@@ -30,13 +33,13 @@ class PlaySoundsViewController: UIViewController {
     @IBAction func playSoundForButton(_ sender: UIButton){
         switch(ButtonType(rawValue: sender.tag)!) {
         case .slow:
-            playSound(rate: 0.5)
+            playSound(rate: soundValues[ButtonType.slow.rawValue])
         case .fast:
-            playSound(rate: 1.5)
+            playSound(rate: soundValues[ButtonType.fast.rawValue])
         case .chipmunk:
-            playSound(pitch: 1000)
+            playSound(pitch: soundValues[ButtonType.chipmunk.rawValue])
         case .vader:
-            playSound(pitch: -1000)
+            playSound(pitch: soundValues[ButtonType.vader.rawValue])
         case .echo:
             playSound(echo: true)
         case .reverb:
